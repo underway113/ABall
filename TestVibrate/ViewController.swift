@@ -97,16 +97,16 @@ class ViewController: UIViewController {
 //                    AudioServicesPlayAlertSound(1519)
                     self.moveObject(direction.top, xPos, yPos, width, height, currentData.acceleration)
                 }
-                else if xPos <= maxWidthScreen-width && currentData.acceleration.x > 0.05 {
+                else if xPos + width <= maxWidthScreen && currentData.acceleration.x > 0.05 {
 //                    AudioServicesPlayAlertSound(1519)
                     self.moveObject(direction.right, xPos, yPos, width, height, currentData.acceleration)
                 }
-                else if yPos <= maxHeightScreen-height && currentData.acceleration.y < -0.05 {
+                else if yPos + height <= maxHeightScreen && currentData.acceleration.y < -0.05 {
 //                    AudioServicesPlayAlertSound(1519)
                     self.moveObject(direction.down, xPos, yPos, width, height, currentData.acceleration)
                 }
                 
-                print(currentData.acceleration)
+//                print(currentData.acceleration)
                 
                 
             }
@@ -119,24 +119,47 @@ class ViewController: UIViewController {
     
     
     func moveObject(_ dir:ViewController.direction, _ x:CGFloat, _ y:CGFloat, _ width:CGFloat, _ height:CGFloat, _ accel:CMAcceleration) {
+        
+        let maxWidthScreen = view.frame.width
+        let maxHeightScreen = view.frame.height
+        print(maxHeightScreen, maxWidthScreen)
         print("Move \(dir) x \(x) y \(y)")
         
-        let diffX = (CGFloat(accel.x) * self.factorAccel)
-        let diffY = (CGFloat(accel.y) * self.factorAccel)
+        var newPosX = x + (CGFloat(accel.x) * self.factorAccel)
+        var newPosY = y - (CGFloat(accel.y) * self.factorAccel)
+        
+        if newPosX > maxWidthScreen-width {
+            AudioServicesPlayAlertSound(1519)
+            newPosX = maxWidthScreen-width
+        }
+        else if newPosX < 0 {
+            AudioServicesPlayAlertSound(1519)
+            newPosX = 0
+        }
+        
+        if newPosY > maxHeightScreen-height {
+            AudioServicesPlayAlertSound(1519)
+            newPosY = maxHeightScreen-height
+        }
+        else if newPosY < 0 {
+            AudioServicesPlayAlertSound(1519)
+            newPosY = 0
+        }
+        
         
         UIView.animate(withDuration: 0.08, animations: {
             switch dir {
             case .top:
-                self.redButton.frame = CGRect(x: x, y: y - diffY, width: width, height: height)
+                self.redButton.frame = CGRect(x: x, y: newPosY, width: width, height: height)
                 
             case .down:
-                self.redButton.frame = CGRect(x: x, y: y - diffY, width: width, height: height)
+                self.redButton.frame = CGRect(x: x, y: newPosY, width: width, height: height)
                 
             case .left:
-                self.redButton.frame = CGRect(x: x + diffX, y: y, width: width, height: height)
+                self.redButton.frame = CGRect(x: newPosX, y: y, width: width, height: height)
                 
             case .right:
-                self.redButton.frame = CGRect(x: x + diffX, y: y, width: width, height: height)
+                self.redButton.frame = CGRect(x: newPosX, y: y, width: width, height: height)
                 
             }
         })
