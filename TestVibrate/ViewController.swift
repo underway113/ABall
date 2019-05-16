@@ -46,6 +46,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         blueButton.layer.cornerRadius = 30
+        redButton.layer.cornerRadius = 12
 //        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
         
         let gesture = UIPanGestureRecognizer(target: self, action: #selector(ViewController.dragItem(_:)))
@@ -75,13 +76,6 @@ class ViewController: UIViewController {
         motionManager.startAccelerometerUpdates(to: OperationQueue.current!) { (data, error) in
             if let currentData = data {
                 
-//                if currentData.acceleration.x < 0.05 {
-//                    self.motionManager.accelerometerUpdateInterval = 0.6
-//                }
-//                else {
-//                    self.motionManager.accelerometerUpdateInterval = 0.1
-//                }
-                
                 let xPos = self.redButton.frame.origin.x
                 let yPos = self.redButton.frame.origin.y
                 let height = self.redButton.frame.size.height
@@ -89,22 +83,21 @@ class ViewController: UIViewController {
                 
 //                let colission = self.redButton.frame.intersects(self.lineLeft1.frame)
                 
-                if xPos >= 0 && currentData.acceleration.x < -0.05 {
-//                    AudioServicesPlayAlertSound(1519)
-                    self.moveObject(direction.left, xPos, yPos, width, height, currentData.acceleration)
-                }
-                else if yPos >= 0 && currentData.acceleration.y > 0.05 {
-//                    AudioServicesPlayAlertSound(1519)
-                    self.moveObject(direction.top, xPos, yPos, width, height, currentData.acceleration)
-                }
-                else if xPos + width <= maxWidthScreen && currentData.acceleration.x > 0.05 {
-//                    AudioServicesPlayAlertSound(1519)
-                    self.moveObject(direction.right, xPos, yPos, width, height, currentData.acceleration)
-                }
-                else if yPos + height <= maxHeightScreen && currentData.acceleration.y < -0.05 {
-//                    AudioServicesPlayAlertSound(1519)
-                    self.moveObject(direction.down, xPos, yPos, width, height, currentData.acceleration)
-                }
+                self.moveObject(nil, xPos, yPos, width, height, currentData.acceleration)
+                
+//                if xPos >= 0 && currentData.acceleration.x < -0.05 {
+//                    self.moveObject(direction.left, xPos, yPos, width, height, currentData.acceleration)
+//                }
+//                else if yPos >= self.view.safeAreaInsets.top + height && currentData.acceleration.y > 0.05 {
+//                    print("TOPPP")
+//                    self.moveObject(direction.top, xPos, yPos, width, height, currentData.acceleration)
+//                }
+//                else if xPos + width <= maxWidthScreen && currentData.acceleration.x > 0.05 {
+//                    self.moveObject(direction.right, xPos, yPos, width, height, currentData.acceleration)
+//                }
+//                else if yPos + height <= maxHeightScreen && currentData.acceleration.y < -0.05 {
+//                    self.moveObject(direction.down, xPos, yPos, width, height, currentData.acceleration)
+//                }
                 
 //                print(currentData.acceleration)
                 
@@ -116,14 +109,12 @@ class ViewController: UIViewController {
     }
     
     
-    
-    
-    func moveObject(_ dir:ViewController.direction, _ x:CGFloat, _ y:CGFloat, _ width:CGFloat, _ height:CGFloat, _ accel:CMAcceleration) {
+    func moveObject(_ dir:ViewController.direction?, _ x:CGFloat, _ y:CGFloat, _ width:CGFloat, _ height:CGFloat, _ accel:CMAcceleration) {
         
         let maxWidthScreen = view.frame.width
         let maxHeightScreen = view.frame.height
-        print(maxHeightScreen, maxWidthScreen)
-        print("Move \(dir) x \(x) y \(y)")
+//        print(maxHeightScreen, maxWidthScreen)
+//        print("Move \(dir) x \(x) y \(y)")
         
         var newPosX = x + (CGFloat(accel.x) * self.factorAccel)
         var newPosY = y - (CGFloat(accel.y) * self.factorAccel)
@@ -141,26 +132,28 @@ class ViewController: UIViewController {
             AudioServicesPlayAlertSound(1519)
             newPosY = maxHeightScreen-height
         }
-        else if newPosY < 0 {
+        else if newPosY < self.view.safeAreaInsets.top{
             AudioServicesPlayAlertSound(1519)
-            newPosY = 0
+            newPosY = self.view.safeAreaInsets.top
         }
         
         
-        UIView.animate(withDuration: 0.08, animations: {
+        UIView.animate(withDuration: 0.1, animations: {
             switch dir {
-            case .top:
+            case .top?:
                 self.redButton.frame = CGRect(x: x, y: newPosY, width: width, height: height)
                 
-            case .down:
+            case .down?:
                 self.redButton.frame = CGRect(x: x, y: newPosY, width: width, height: height)
                 
-            case .left:
+            case .left?:
                 self.redButton.frame = CGRect(x: newPosX, y: y, width: width, height: height)
                 
-            case .right:
+            case .right?:
                 self.redButton.frame = CGRect(x: newPosX, y: y, width: width, height: height)
-                
+            case nil:
+                self.redButton.frame = CGRect(x: newPosX, y: newPosY, width: width, height: height)
+                print("henlo")
             }
         })
         

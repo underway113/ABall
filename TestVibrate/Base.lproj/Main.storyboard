@@ -42,7 +42,7 @@
                                 <color key="backgroundColor" red="0.0011229392833558634" green="0.89813512559999997" blue="0.021299447325734997" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pjk-0j-hzw">
-                                <rect key="frame" x="177" y="419" width="61" height="59"/>
+                                <rect key="frame" x="195" y="436" width="25" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.84704906089999998" green="0.061315622039999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <gestureRecognizers/>
@@ -50,8 +50,8 @@
                                     <outletCollection property="gestureRecognizers" destination="Nwk-yE-oux" appends="YES" id="xVR-df-8M6"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uch-Re-gJc">
-                                <rect key="frame" x="87" y="685" width="4" height="160"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y2X-eh-lwF">
+                                <rect key="frame" x="0.0" y="39" width="414" height="5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -62,7 +62,6 @@
                     <connections>
                         <outlet property="blueButton" destination="jle-9f-U9z" id="NYr-xH-YvW"/>
                         <outlet property="greenButton" destination="1Dh-Ff-HWf" id="55X-JL-63n"/>
-                        <outlet property="lineLeft1" destination="uch-Re-gJc" id="wxB-eP-4xU"/>
                         <outlet property="orangeButton" destination="dao-oq-bNX" id="9XR-00-CbR"/>
                         <outlet property="redButton" destination="pjk-0j-hzw" id="yg9-MG-ufI"/>
                     </connections>
