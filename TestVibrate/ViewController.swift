@@ -11,66 +11,36 @@ import AudioToolbox
 import CoreMotion
 
 class ViewController: UIViewController {
-
-    enum direction {
-        case top
-        case down
-        case left
-        case right
-    }
     
-    let factorAccel:CGFloat = 200
+    
+    
     
     let motionManager = CMMotionManager()
-    @IBOutlet weak var orangeButton: UIView!
-    @IBOutlet weak var blueButton: UIView!
     @IBOutlet weak var redButton: UIView!
-    @IBOutlet weak var greenButton: UIView!
     
-    @IBOutlet weak var lineLeft1: UIView!
+    //Line Collection
+    @IBOutlet var lineCollection1: [UIView]!
     
-    @IBAction func blueButtonPressed(_ sender: Any) {
-        AudioServicesPlayAlertSound(1519)
-        let color = UIColor(displayP3Red: 0.94, green: 0.96, blue: 0.99, alpha: 1.0)
-        blueButton.layer.backgroundColor = color.cgColor
-        
-    }
     
-    @IBAction func redButtonPressed(_ sender: Any) {
-        AudioServicesPlayAlertSound(1520)
-    }
     
-    @IBAction func greenButtonPressed(_ sender: Any) { AudioServicesPlaySystemSound(1521)
-    }
+    //FinishView
+    @IBOutlet weak var finishView: UIView!
+    
+    
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        blueButton.layer.cornerRadius = 30
-        redButton.layer.cornerRadius = 12
-//        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-        
-        let gesture = UIPanGestureRecognizer(target: self, action: #selector(ViewController.dragItem(_:)))
-        orangeButton.addGestureRecognizer(gesture)
-        orangeButton.isUserInteractionEnabled = true
-        
+        redButton.layer.cornerRadius = 15
+        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
     }
-    
-    @objc func dragItem(_ gesture:UIPanGestureRecognizer) {
-        let translation = gesture.translation(in: self.view)
-        
-        if(!self.orangeButton.frame.intersects(self.greenButton.frame)) {
-            orangeButton.center = CGPoint(x: orangeButton.center.x + translation.x, y: orangeButton.center.y + translation.y)
-            gesture.setTranslation(CGPoint.zero, in: self.view)
-        }
-        
-    }
-
     
     override func viewDidAppear(_ animated: Bool) {
         
         let maxWidthScreen = view.frame.width
         let maxHeightScreen = view.frame.height
-        
         
         motionManager.accelerometerUpdateInterval = 0.1
         motionManager.startAccelerometerUpdates(to: OperationQueue.current!) { (data, error) in
@@ -81,25 +51,25 @@ class ViewController: UIViewController {
                 let height = self.redButton.frame.size.height
                 let width = self.redButton.frame.size.width
                 
-//                let colission = self.redButton.frame.intersects(self.lineLeft1.frame)
-                
-                self.moveObject(nil, xPos, yPos, width, height, currentData.acceleration)
-                
-//                if xPos >= 0 && currentData.acceleration.x < -0.05 {
-//                    self.moveObject(direction.left, xPos, yPos, width, height, currentData.acceleration)
-//                }
-//                else if yPos >= self.view.safeAreaInsets.top + height && currentData.acceleration.y > 0.05 {
-//                    print("TOPPP")
-//                    self.moveObject(direction.top, xPos, yPos, width, height, currentData.acceleration)
-//                }
-//                else if xPos + width <= maxWidthScreen && currentData.acceleration.x > 0.05 {
-//                    self.moveObject(direction.right, xPos, yPos, width, height, currentData.acceleration)
-//                }
-//                else if yPos + height <= maxHeightScreen && currentData.acceleration.y < -0.05 {
-//                    self.moveObject(direction.down, xPos, yPos, width, height, currentData.acceleration)
-//                }
-                
+                //Call function Move Object
+                self.moveObject(xPos, yPos, width, height, currentData.acceleration)
+            
 //                print(currentData.acceleration)
+                
+                //Loop lineColection 1 that exist in screen
+                for line in self.lineCollection1 {
+                    let colission = self.redButton.frame.intersects(line.frame)
+                    
+                    //When Collide
+                    if colission {
+//                        print("HIT")
+                        self.redButton.frame = CGRect(x: (maxWidthScreen-width)/2, y: (maxHeightScreen-height)/2, width: width, height: height)
+                    }
+                    else {
+//                        print("NOT HIT")
+                    }
+                }
+                
                 
                 
             }
@@ -109,53 +79,65 @@ class ViewController: UIViewController {
     }
     
     
-    func moveObject(_ dir:ViewController.direction?, _ x:CGFloat, _ y:CGFloat, _ width:CGFloat, _ height:CGFloat, _ accel:CMAcceleration) {
+    func moveObject(_ x:CGFloat, _ y:CGFloat, _ width:CGFloat, _ height:CGFloat, _ accel:CMAcceleration) {
         
         let maxWidthScreen = view.frame.width
         let maxHeightScreen = view.frame.height
-//        print(maxHeightScreen, maxWidthScreen)
-//        print("Move \(dir) x \(x) y \(y)")
+        let factorAccel:CGFloat = 200
         
-        var newPosX = x + (CGFloat(accel.x) * self.factorAccel)
-        var newPosY = y - (CGFloat(accel.y) * self.factorAccel)
+        var accelX = CGFloat(accel.x)
+        var accelY = CGFloat(accel.y)
+        let maxAccel:CGFloat = 0.2
+        
+        
+        //Line Object
+        var line7 = self.lineCollection1[7].frame
+        
+        //Adjust for maximum Acceleration
+        if accelX < -maxAccel {
+            accelX = -maxAccel
+        }
+        else if accelX > 0.2 {
+            accelX = 0.2
+        }
+
+        if accelY < -0.2 {
+            accelY = -0.2
+        }
+        else if accelY > 0.2 {
+            accelY = 0.2
+        }
+        
+        //Adjust position if exceed screen
+        var newPosX = x + (accelX * factorAccel)
+        var newPosY = y - (accelY * factorAccel)
         
         if newPosX > maxWidthScreen-width {
-            AudioServicesPlayAlertSound(1519)
             newPosX = maxWidthScreen-width
         }
         else if newPosX < 0 {
-            AudioServicesPlayAlertSound(1519)
             newPosX = 0
         }
         
         if newPosY > maxHeightScreen-height {
-            AudioServicesPlayAlertSound(1519)
             newPosY = maxHeightScreen-height
         }
         else if newPosY < self.view.safeAreaInsets.top{
-            AudioServicesPlayAlertSound(1519)
             newPosY = self.view.safeAreaInsets.top
         }
         
         
-        UIView.animate(withDuration: 0.1, animations: {
-            switch dir {
-            case .top?:
-                self.redButton.frame = CGRect(x: x, y: newPosY, width: width, height: height)
-                
-            case .down?:
-                self.redButton.frame = CGRect(x: x, y: newPosY, width: width, height: height)
-                
-            case .left?:
-                self.redButton.frame = CGRect(x: newPosX, y: y, width: width, height: height)
-                
-            case .right?:
-                self.redButton.frame = CGRect(x: newPosX, y: y, width: width, height: height)
-            case nil:
-                self.redButton.frame = CGRect(x: newPosX, y: newPosY, width: width, height: height)
-                print("henlo")
-            }
+        //Move object
+        UIView.animate(withDuration: 0.2, animations: {
+            self.redButton.frame = CGRect(x: newPosX, y: newPosY, width: width, height: height)
+            
+                self.lineCollection1[7].frame = CGRect(x: line7.origin.x, y: line7.origin.y+10, width: line7.width, height: line7.height)
         })
+
+        if line7.origin.y > maxHeightScreen  {
+            print("Xxx")
+            self.lineCollection1[7].frame.origin.y = 0
+        }
         
         
         
