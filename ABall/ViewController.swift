@@ -131,9 +131,12 @@ class ViewController: UIViewController {
         UIView.animate(withDuration: 0.2, animations: {
             self.redButton.frame = CGRect(x: newPosX, y: newPosY, width: width, height: height)
             
-                self.lineCollection1[7].frame = CGRect(x: line7.origin.x, y: line7.origin.y+10, width: line7.width, height: line7.height)
+            //Move Obstacle Line
+            //TODO When "Level 1 Finish"
+            self.lineCollection1[7].frame = CGRect(x: line7.origin.x, y: line7.origin.y+10, width: line7.width, height: line7.height)
         })
 
+        
         if line7.origin.y > maxHeightScreen  {
             print("Xxx")
             self.lineCollection1[7].frame.origin.y = 0
