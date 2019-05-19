@@ -18,11 +18,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pjk-0j-hzw">
-                                <rect key="frame" x="192" y="462" width="30" height="30"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aP2-1H-WPt">
+                                <rect key="frame" x="258" y="231" width="156" height="313"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.84704906089999998" green="0.061315622039999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <gestureRecognizers/>
+                                <color key="backgroundColor" red="1" green="0.6645419132" blue="0.15507099690000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JYe-tx-69B">
+                                <rect key="frame" x="334" y="632" width="80" height="122"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y2X-eh-lwF">
                                 <rect key="frame" x="0.0" y="40" width="414" height="5"/>
@@ -35,7 +39,7 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wMu-1l-Rks">
-                                <rect key="frame" x="156" y="130" width="5" height="600"/>
+                                <rect key="frame" x="156" y="130" width="5" height="662"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                             </view>
@@ -60,12 +64,12 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Alb-Dm-hkO">
-                                <rect key="frame" x="0.0" y="475" width="80" height="5"/>
+                                <rect key="frame" x="0.0" y="72" width="80" height="5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="83T-9R-Irz">
-                                <rect key="frame" x="253" y="629" width="5" height="280"/>
+                                <rect key="frame" x="253" y="749" width="5" height="160"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                             </view>
@@ -74,17 +78,45 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.84704906089999998" green="0.061315622039999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OXL-lP-GYN">
-                                <rect key="frame" x="136" y="884" width="143" height="4"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zf0-Ic-5uH">
+                                <rect key="frame" x="81" y="539" width="80" height="5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Qy-5L-Zop">
+                                <rect key="frame" x="0.0" y="629" width="80" height="5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zab-HJ-IJ4">
+                                <rect key="frame" x="334" y="130" width="5" height="624"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xKO-ns-A3F">
+                                <rect key="frame" x="253" y="749" width="82" height="5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cDh-HJ-aCD">
+                                <rect key="frame" x="0.0" y="446" width="80" height="5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pjk-0j-hzw">
+                                <rect key="frame" x="192" y="462" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.84704906089999998" green="0.061315622039999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <gestureRecognizers/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="antiGravity" destination="aP2-1H-WPt" id="U49-XP-5Ks"/>
                         <outlet property="finishView" destination="Fjl-Nx-tYE" id="nqa-HL-XdA"/>
+                        <outlet property="gravityPuller" destination="JYe-tx-69B" id="ISl-p8-H9Y"/>
                         <outlet property="redButton" destination="pjk-0j-hzw" id="yg9-MG-ufI"/>
                         <outletCollection property="lineCollection1" destination="oYU-lU-kY3" collectionClass="NSMutableArray" id="4FZ-y0-TbB"/>
                         <outletCollection property="lineCollection1" destination="QES-PY-lee" collectionClass="NSMutableArray" id="cLS-YR-wa7"/>
@@ -95,7 +127,11 @@
                         <outletCollection property="lineCollection1" destination="YQM-8b-rbV" collectionClass="NSMutableArray" id="Eca-1K-3Lo"/>
                         <outletCollection property="lineCollection1" destination="Alb-Dm-hkO" collectionClass="NSMutableArray" id="vgT-Zd-8OQ"/>
                         <outletCollection property="lineCollection1" destination="83T-9R-Irz" collectionClass="NSMutableArray" id="L8A-qp-KPG"/>
-                        <outletCollection property="lineCollection1" destination="OXL-lP-GYN" collectionClass="NSMutableArray" id="1Ly-dc-K3q"/>
+                        <outletCollection property="lineCollection1" destination="zf0-Ic-5uH" collectionClass="NSMutableArray" id="dvB-Nc-1zz"/>
+                        <outletCollection property="lineCollection1" destination="3Qy-5L-Zop" collectionClass="NSMutableArray" id="lCd-S8-1Nv"/>
+                        <outletCollection property="lineCollection1" destination="xKO-ns-A3F" collectionClass="NSMutableArray" id="yVR-U7-abx"/>
+                        <outletCollection property="lineCollection1" destination="Zab-HJ-IJ4" collectionClass="NSMutableArray" id="AuB-ab-D1p"/>
+                        <outletCollection property="lineCollection1" destination="cDh-HJ-aCD" collectionClass="NSMutableArray" id="rrg-Ot-tQz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

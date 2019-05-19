@@ -18,6 +18,12 @@ class ViewController: UIViewController {
     //Line Collection
     @IBOutlet var lineCollection1: [UIView]!
     
+    //Anti Gravity
+    @IBOutlet weak var antiGravity: UIView!
+    
+    //Gravity Puller
+    @IBOutlet weak var gravityPuller: UIView!
+    
     
     
     //FinishView
@@ -28,7 +34,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        redButton.layer.cornerRadius = 15
+        redButton.layer.cornerRadius = redButton.frame.width/2
         UIApplication.shared.isIdleTimerDisabled = true
         AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
     }
@@ -55,14 +61,53 @@ class ViewController: UIViewController {
                 //Loop lineColection 1 that exist in screen
                 for line in self.lineCollection1 {
                     let colission = self.redButton.frame.intersects(line.frame)
-                    
+
                     //When Collide
-                    if colission {
+                    if colission && currentData.acceleration.z < 0.5 {
+                        AudioServicesPlayAlertSound(1521)
 //                        print("HIT")
-                        self.redButton.frame = CGRect(x: (maxWidthScreen-width)/2, y: (maxHeightScreen-height)/2, width: width, height: height)
+                        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseInOut, animations: {
+                            
+                            self.redButton.frame = CGRect(x: (maxWidthScreen-width)/2, y: (maxHeightScreen-height)/2, width: 30, height: 30)
+                            self.finishView.frame = CGRect(x: 258, y: 836, width: 156, height: 60)
+                            self.lineCollection1[12].frame = CGRect(x: 334, y: 130, width: 5, height: 624)
+                            
+                        }, completion: { (completed) in
+                            print("Done Finishing")
+                        })
                     }
                 }
                 
+                
+                
+                //IF Finish
+                let colissionFinish = self.redButton.frame.intersects(self.finishView.frame)
+                
+                if colissionFinish  {
+                    if self.finishView.frame.origin.x == 258 {
+                        AudioServicesPlayAlertSound(1519)
+                        UIView.animate(withDuration: 4, delay: 0, options: .curveEaseInOut, animations: {
+                            
+                            self.lineCollection1[12].frame = CGRect(x: 334, y: 130, width: 5, height: 414)
+                            
+                            self.finishView.frame = CGRect(x: 161, y: 411, width: 92, height: 128)
+                            
+                        }, completion: { (completed) in
+                            print("Done Finishing")
+                        })
+                    }
+                    else if self.finishView.frame.origin.x == 161 {
+                        AudioServicesPlayAlertSound(1519)
+                        UIView.animate(withDuration: 4, delay: 0, options: .curveEaseInOut, animations: {
+                            
+                            self.finishView.frame = CGRect(x: 258, y: 836, width: 156, height: 60)
+                            
+                        }, completion: { (completed) in
+                            print("Done Finishing")
+                        })
+                    }
+                }
+                //
                 
                 
             }
@@ -82,11 +127,33 @@ class ViewController: UIViewController {
         let maxWidthScreen = view.frame.width
         let maxHeightScreen = view.frame.height
         let factorAccel:CGFloat = 200
+        let speedExpand:CGFloat = 0.025
         
         var accelX = CGFloat(accel.x)
         var accelY = CGFloat(accel.y)
         let maxAccel:CGFloat = 0.2
         
+        //Obstacle Anti Gravity
+        let colissionAntiGravity = self.redButton.frame.intersects(self.antiGravity.frame)
+        //
+        
+        //Obstacle Gravity Puller
+        let colissionGravityPuller = self.redButton.frame.intersects(self.gravityPuller.frame)
+        //
+        
+        //Colission Anti Gravity
+        if colissionAntiGravity {
+            print("Anti Grav")
+            accelY = accelY + CGFloat(0.35)
+        }
+        //
+        
+        //Colission Gravity Puller
+        if colissionGravityPuller {
+            print("Gravity Pull")
+            accelY = accelY - CGFloat(0.35)
+        }
+        //
         
         //Line Object
         let line7 = self.lineCollection1[7].frame
@@ -126,10 +193,11 @@ class ViewController: UIViewController {
         }
         //
         
-        //Move object
+        //Move Ball
         UIView.animate(withDuration: 0.2, animations: {
-            self.redButton.frame = CGRect(x: newPosX, y: newPosY, width: width, height: height)
+            self.redButton.frame = CGRect(x: newPosX, y: newPosY, width: width + speedExpand, height: height + speedExpand)
             
+            self.redButton.layer.cornerRadius = self.redButton.frame.width/2
             //Move Obstacle Line
             //TODO When "Level 1 Finish"
             self.lineCollection1[7].frame = CGRect(x: line7.origin.x, y: line7.origin.y+10, width: line7.width, height: line7.height)
