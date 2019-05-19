@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  TestVibrate
+//  ABall
 //
 //  Created by Jeremy Adam on 14/05/19.
 //  Copyright © 2019 Underway. All rights reserved.
@@ -11,9 +11,6 @@ import AudioToolbox
 import CoreMotion
 
 class ViewController: UIViewController {
-    
-    
-    
     
     let motionManager = CMMotionManager()
     @IBOutlet weak var redButton: UIView!
@@ -28,12 +25,11 @@ class ViewController: UIViewController {
     
     
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         redButton.layer.cornerRadius = 15
+        UIApplication.shared.isIdleTimerDisabled = true
         AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
     }
     
@@ -46,15 +42,15 @@ class ViewController: UIViewController {
         motionManager.startAccelerometerUpdates(to: OperationQueue.current!) { (data, error) in
             if let currentData = data {
                 
+                //Starting Attribute of the Ball
                 let xPos = self.redButton.frame.origin.x
                 let yPos = self.redButton.frame.origin.y
                 let height = self.redButton.frame.size.height
                 let width = self.redButton.frame.size.width
+                //
                 
                 //Call function Move Object
                 self.moveObject(xPos, yPos, width, height, currentData.acceleration)
-            
-//                print(currentData.acceleration)
                 
                 //Loop lineColection 1 that exist in screen
                 for line in self.lineCollection1 {
@@ -65,14 +61,16 @@ class ViewController: UIViewController {
 //                        print("HIT")
                         self.redButton.frame = CGRect(x: (maxWidthScreen-width)/2, y: (maxHeightScreen-height)/2, width: width, height: height)
                     }
-                    else {
-//                        print("NOT HIT")
-                    }
                 }
                 
                 
                 
             }
+            else {
+                print(error!)
+            }
+            
+            
         }
         
         
@@ -91,7 +89,7 @@ class ViewController: UIViewController {
         
         
         //Line Object
-        var line7 = self.lineCollection1[7].frame
+        let line7 = self.lineCollection1[7].frame
         
         //Adjust for maximum Acceleration
         if accelX < -maxAccel {
@@ -107,6 +105,7 @@ class ViewController: UIViewController {
         else if accelY > 0.2 {
             accelY = 0.2
         }
+        //
         
         //Adjust position if exceed screen
         var newPosX = x + (accelX * factorAccel)
@@ -125,7 +124,7 @@ class ViewController: UIViewController {
         else if newPosY < self.view.safeAreaInsets.top{
             newPosY = self.view.safeAreaInsets.top
         }
-        
+        //
         
         //Move object
         UIView.animate(withDuration: 0.2, animations: {
@@ -135,12 +134,14 @@ class ViewController: UIViewController {
             //TODO When "Level 1 Finish"
             self.lineCollection1[7].frame = CGRect(x: line7.origin.x, y: line7.origin.y+10, width: line7.width, height: line7.height)
         })
-
+        //
         
+        //Reset Position of Moving Line
         if line7.origin.y > maxHeightScreen  {
             print("Xxx")
             self.lineCollection1[7].frame.origin.y = 0
         }
+        //
         
         
         
