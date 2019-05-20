@@ -9,6 +9,7 @@
 import UIKit
 import AudioToolbox
 import CoreMotion
+import AVFoundation
 
 class ViewController: UIViewController {
     
@@ -29,14 +30,17 @@ class ViewController: UIViewController {
     //FinishView
     @IBOutlet weak var finishView: UIView!
     
+    var player = AVAudioPlayer()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         redButton.layer.cornerRadius = redButton.frame.width/2
         UIApplication.shared.isIdleTimerDisabled = true
         AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -63,18 +67,19 @@ class ViewController: UIViewController {
                     let colission = self.redButton.frame.intersects(line.frame)
 
                     //When Collide
-                    if colission && currentData.acceleration.z < 0.5 {
-                        AudioServicesPlayAlertSound(1521)
+                    if colission && currentData.acceleration.z < 0.8 {
+                        
 //                        print("HIT")
-                        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseInOut, animations: {
+                        UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseInOut, animations: {
                             
+                            AudioServicesPlayAlertSound(1521)
+                            AudioServicesPlaySystemSound(1022)
+//                            self.playSound("collision")
                             self.redButton.frame = CGRect(x: (maxWidthScreen-width)/2, y: (maxHeightScreen-height)/2, width: 30, height: 30)
                             self.finishView.frame = CGRect(x: 258, y: 836, width: 156, height: 60)
                             self.lineCollection1[12].frame = CGRect(x: 334, y: 130, width: 5, height: 624)
                             
-                        }, completion: { (completed) in
-                            print("Done Finishing")
-                        })
+                        }, completion: nil)
                     }
                 }
                 
@@ -84,6 +89,7 @@ class ViewController: UIViewController {
                 let colissionFinish = self.redButton.frame.intersects(self.finishView.frame)
                 
                 if colissionFinish  {
+                    self.playSound("collision_fin")
                     if self.finishView.frame.origin.x == 258 {
                         AudioServicesPlayAlertSound(1519)
                         UIView.animate(withDuration: 4, delay: 0, options: .curveEaseInOut, animations: {
@@ -92,9 +98,7 @@ class ViewController: UIViewController {
                             
                             self.finishView.frame = CGRect(x: 161, y: 411, width: 92, height: 128)
                             
-                        }, completion: { (completed) in
-                            print("Done Finishing")
-                        })
+                        }, completion: nil)
                     }
                     else if self.finishView.frame.origin.x == 161 {
                         AudioServicesPlayAlertSound(1519)
@@ -102,9 +106,7 @@ class ViewController: UIViewController {
                             
                             self.finishView.frame = CGRect(x: 258, y: 836, width: 156, height: 60)
                             
-                        }, completion: { (completed) in
-                            print("Done Finishing")
-                        })
+                        }, completion: nil)
                     }
                 }
                 //
@@ -126,7 +128,7 @@ class ViewController: UIViewController {
         
         let maxWidthScreen = view.frame.width
         let maxHeightScreen = view.frame.height
-        let factorAccel:CGFloat = 200
+        let factorAccel:CGFloat = 100
         let speedExpand:CGFloat = 0.025
         
         var accelX = CGFloat(accel.x)
@@ -143,14 +145,12 @@ class ViewController: UIViewController {
         
         //Colission Anti Gravity
         if colissionAntiGravity {
-            print("Anti Grav")
             accelY = accelY + CGFloat(0.35)
         }
         //
         
         //Colission Gravity Puller
         if colissionGravityPuller {
-            print("Gravity Pull")
             accelY = accelY - CGFloat(0.35)
         }
         //
@@ -206,7 +206,6 @@ class ViewController: UIViewController {
         
         //Reset Position of Moving Line
         if line7.origin.y > maxHeightScreen  {
-            print("Xxx")
             self.lineCollection1[7].frame.origin.y = 0
         }
         //
@@ -215,5 +214,17 @@ class ViewController: UIViewController {
         
     }
 
+    func playSound(_ soundName:String) {
+        let sound = Bundle.main.path(forResource: soundName, ofType: "mp3")
+        
+        do {
+            player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound!))
+            player.play()
+        }
+        catch {
+            print(error)
+        }
+        
+    }
 }
 
