@@ -89,7 +89,7 @@ class ViewController: UIViewController {
                 let colissionFinish = self.redButton.frame.intersects(self.finishView.frame)
                 
                 if colissionFinish  {
-                    self.playSound("collision_fin")
+                    self.playSound("fin")
                     if self.finishView.frame.origin.x == 258 {
                         AudioServicesPlayAlertSound(1519)
                         UIView.animate(withDuration: 4, delay: 0, options: .curveEaseInOut, animations: {
@@ -128,7 +128,7 @@ class ViewController: UIViewController {
         
         let maxWidthScreen = view.frame.width
         let maxHeightScreen = view.frame.height
-        let factorAccel:CGFloat = 100
+        let factorAccel:CGFloat = 150
         let speedExpand:CGFloat = 0.025
         
         var accelX = CGFloat(accel.x)

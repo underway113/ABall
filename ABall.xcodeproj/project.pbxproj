@@ -13,7 +13,7 @@
 		46894E09228A555E005CE63B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46894E08228A555E005CE63B /* Assets.xcassets */; };
 		46894E0C228A555E005CE63B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46894E0A228A555E005CE63B /* LaunchScreen.storyboard */; };
 		46EFB7CE22924BBB00AE05F0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46EFB7CD22924BBB00AE05F0 /* AVFoundation.framework */; };
-		46EFB7D822925FF200AE05F0 /* collision_fin.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 46EFB7D722925FF200AE05F0 /* collision_fin.mp3 */; };
+		46EFB7FA2292B67B00AE05F0 /* fin.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 46EFB7F92292B67B00AE05F0 /* fin.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +25,7 @@
 		46894E0B228A555E005CE63B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		46894E0D228A555E005CE63B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46EFB7CD22924BBB00AE05F0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		46EFB7D722925FF200AE05F0 /* collision_fin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = collision_fin.mp3; sourceTree = "<group>"; };
+		46EFB7F92292B67B00AE05F0 /* fin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = fin.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +73,7 @@
 		46EFB7CC22924BBB00AE05F0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				46EFB7D722925FF200AE05F0 /* collision_fin.mp3 */,
+				46EFB7F92292B67B00AE05F0 /* fin.mp3 */,
 				46EFB7CD22924BBB00AE05F0 /* AVFoundation.framework */,
 			);
 			name = Frameworks;
@@ -140,7 +140,7 @@
 				46894E0C228A555E005CE63B /* LaunchScreen.storyboard in Resources */,
 				46894E09228A555E005CE63B /* Assets.xcassets in Resources */,
 				46894E07228A555B005CE63B /* Main.storyboard in Resources */,
-				46EFB7D822925FF200AE05F0 /* collision_fin.mp3 in Resources */,
+				46EFB7FA2292B67B00AE05F0 /* fin.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
