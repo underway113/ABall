@@ -25,18 +25,39 @@ class ViewController: UIViewController {
     //Gravity Puller
     @IBOutlet weak var gravityPuller: UIView!
     
-    
-    
     //FinishView
     @IBOutlet weak var finishView: UIView!
     
-    var player = AVAudioPlayer()
+    @IBOutlet weak var lineFlagSurprise1: UIView!
     
+    //Player for Audio
+    var player = AVAudioPlayer()
+
+    //Arrow
+    @IBOutlet var leftArrowUpCollection: [UIView]!
+    @IBOutlet var rightArrowUpCollection: [UIView]!
+    
+    @IBOutlet var leftArrowDownCollection: [UIView]!
+    
+    @IBOutlet var rightArrowDownCollection: [UIView]!
+    
+    let angleConst:CGFloat = 60
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Up Arrow Rotate
+        for (index, item) in leftArrowUpCollection.enumerated() {
+            item.transform = CGAffineTransform(rotationAngle: -angleConst)
+            rightArrowUpCollection[index].transform = CGAffineTransform(rotationAngle: angleConst)
+        }
         
+        //Down Arrow Rotate
+        for (index, item) in leftArrowDownCollection.enumerated() {
+            item.transform = CGAffineTransform(rotationAngle: angleConst)
+            rightArrowDownCollection[index].transform = CGAffineTransform(rotationAngle: -angleConst)
+        }
+       
         redButton.layer.cornerRadius = redButton.frame.width/2
         UIApplication.shared.isIdleTimerDisabled = true
         AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
@@ -69,20 +90,47 @@ class ViewController: UIViewController {
                     //When Collide
                     if colission && currentData.acceleration.z < 0.8 {
                         
-//                        print("HIT")
                         UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseInOut, animations: {
                             
                             AudioServicesPlayAlertSound(1521)
                             AudioServicesPlaySystemSound(1022)
-//                            self.playSound("collision")
                             self.redButton.frame = CGRect(x: (maxWidthScreen-width)/2, y: (maxHeightScreen-height)/2, width: 30, height: 30)
                             self.finishView.frame = CGRect(x: 258, y: 836, width: 156, height: 60)
                             self.lineCollection1[12].frame = CGRect(x: 334, y: 130, width: 5, height: 624)
                             
+                            self.lineCollection1[9].frame = CGRect(x: 81, y: 539, width: 80, height: 5)
+                            self.lineCollection1[4].frame = CGRect(x: 81, y: 130, width: 80, height: 5)
+                            self.lineCollection1[6].frame = CGRect(x: 81, y: 355, width: 80, height: 5)
+                            
+                            
+                            self.lineCollection1[5].frame = CGRect(x: 0, y: 231, width: 80, height: 5)
+                            self.lineCollection1[13].frame = CGRect(x: 0, y: 446, width: 80, height: 5)
+                            self.lineCollection1[10].frame = CGRect(x: 0, y: 629, width: 80, height: 5)
+                            
                         }, completion: nil)
                     }
                 }
+                //
                 
+                //Suprise Line 1
+                if self.redButton.frame.intersects(self.lineFlagSurprise1.frame) && self.finishView.frame.origin.x == 161 && self.lineCollection1[9].frame.origin.y == 539 {
+                    UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn, animations: {
+                        let originRightX = self.lineCollection1[9].frame.origin.x
+                        let originLeftX = self.lineCollection1[5].frame.origin.x
+                        let width = self.lineCollection1[9].frame.width
+                        let height = self.lineCollection1[9].frame.height
+                        
+                        self.lineCollection1[9].frame = CGRect(x: originRightX, y: 787, width: width, height: height)
+                        self.lineCollection1[4].frame = CGRect(x: originRightX, y: 378, width: width, height: height)
+                        self.lineCollection1[6].frame = CGRect(x: originRightX, y: 603, width: width, height: height)
+                        
+                        
+                        self.lineCollection1[5].frame = CGRect(x: originLeftX, y: 479, width: width, height: height)
+                        self.lineCollection1[13].frame = CGRect(x: originLeftX, y: 694, width: width, height: height)
+                        self.lineCollection1[10].frame = CGRect(x: originLeftX, y: 877, width: width, height: height)
+                        
+                    }, completion: nil)
+                }
                 
                 
                 //IF Finish

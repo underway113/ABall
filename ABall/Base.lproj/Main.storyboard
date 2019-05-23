@@ -21,12 +21,181 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aP2-1H-WPt">
                                 <rect key="frame" x="258" y="231" width="156" height="313"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rFU-A3-a4F">
+                                        <rect key="frame" x="-7" y="278" width="46" height="3"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PJg-IG-bit">
+                                        <rect key="frame" x="36" y="278" width="46" height="3"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EIw-q4-QjH">
+                                        <rect key="frame" x="-7" y="237" width="46" height="3"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="No1-LF-YT8">
+                                        <rect key="frame" x="36" y="237" width="46" height="3"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F3l-qj-Jff">
+                                        <rect key="frame" x="-7" y="196" width="46" height="3"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4t9-vd-Ava">
+                                        <rect key="frame" x="36" y="196" width="46" height="3"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uaf-ni-jq9">
+                                        <rect key="frame" x="-7" y="155" width="46" height="3"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EKh-Mv-Qai">
+                                        <rect key="frame" x="36" y="155" width="46" height="3"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GPa-5V-5Dh">
+                                        <rect key="frame" x="-7" y="114" width="46" height="3"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gc6-lE-2s4">
+                                        <rect key="frame" x="36" y="114" width="46" height="3"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WZh-pp-Txs">
+                                        <rect key="frame" x="-7" y="73" width="46" height="3"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2AF-xh-Ihc">
+                                        <rect key="frame" x="36" y="73" width="46" height="3"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nrj-GI-hre">
+                                        <rect key="frame" x="-7" y="32" width="46" height="3"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DfV-NA-IEq">
+                                        <rect key="frame" x="36" y="32" width="46" height="3"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FfM-sA-yNs">
+                                        <rect key="frame" x="75" y="278" width="46" height="3"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RDR-DJ-pFk">
+                                        <rect key="frame" x="118" y="278" width="46" height="3"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z35-Li-UsF">
+                                        <rect key="frame" x="75" y="237" width="46" height="3"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F0H-xo-6xW">
+                                        <rect key="frame" x="118" y="237" width="46" height="3"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n6M-97-fsO">
+                                        <rect key="frame" x="75" y="196" width="46" height="3"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SnZ-a3-TuN">
+                                        <rect key="frame" x="118" y="196" width="46" height="3"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RPz-ql-2S4">
+                                        <rect key="frame" x="75" y="155" width="46" height="3"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tbA-Bg-cnx">
+                                        <rect key="frame" x="118" y="155" width="46" height="3"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZNm-Cs-aeT">
+                                        <rect key="frame" x="75" y="114" width="46" height="3"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L4K-Hq-Wfg">
+                                        <rect key="frame" x="117" y="114" width="46" height="3"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VS2-Dq-bls">
+                                        <rect key="frame" x="75" y="73" width="46" height="3"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CJ5-E6-n8b">
+                                        <rect key="frame" x="117" y="73" width="46" height="3"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DEC-G1-aLJ">
+                                        <rect key="frame" x="75" y="32" width="46" height="3"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dvl-Za-PoX">
+                                        <rect key="frame" x="117" y="32" width="46" height="3"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" red="1" green="0.6645419132" blue="0.15507099690000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JYe-tx-69B">
                                 <rect key="frame" x="334" y="632" width="80" height="122"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="70H-9d-1Yn">
+                                        <rect key="frame" x="-4" y="83" width="46" height="3"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pPa-fS-AuZ">
+                                        <rect key="frame" x="39" y="83" width="46" height="3"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cwa-C1-Lpz">
+                                        <rect key="frame" x="-4" y="42" width="46" height="3"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B3m-8F-8Uq">
+                                        <rect key="frame" x="39" y="42" width="46" height="3"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fjl-Nx-tYE">
+                                <rect key="frame" x="258" y="836" width="156" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.84704906089999998" green="0.061315622039999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y2X-eh-lwF">
                                 <rect key="frame" x="0.0" y="40" width="414" height="5"/>
@@ -73,11 +242,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fjl-Nx-tYE">
-                                <rect key="frame" x="258" y="836" width="156" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.84704906089999998" green="0.061315622039999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zf0-Ic-5uH">
                                 <rect key="frame" x="81" y="539" width="80" height="5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -103,6 +267,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                             </view>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7YJ-px-Ch1">
+                                <rect key="frame" x="139" y="794" width="5" height="102"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pjk-0j-hzw">
                                 <rect key="frame" x="192" y="462" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -117,6 +286,7 @@
                         <outlet property="antiGravity" destination="aP2-1H-WPt" id="U49-XP-5Ks"/>
                         <outlet property="finishView" destination="Fjl-Nx-tYE" id="nqa-HL-XdA"/>
                         <outlet property="gravityPuller" destination="JYe-tx-69B" id="ISl-p8-H9Y"/>
+                        <outlet property="lineFlagSurprise1" destination="7YJ-px-Ch1" id="H7U-fa-epd"/>
                         <outlet property="redButton" destination="pjk-0j-hzw" id="yg9-MG-ufI"/>
                         <outletCollection property="lineCollection1" destination="oYU-lU-kY3" collectionClass="NSMutableArray" id="4FZ-y0-TbB"/>
                         <outletCollection property="lineCollection1" destination="QES-PY-lee" collectionClass="NSMutableArray" id="cLS-YR-wa7"/>
@@ -132,6 +302,38 @@
                         <outletCollection property="lineCollection1" destination="xKO-ns-A3F" collectionClass="NSMutableArray" id="yVR-U7-abx"/>
                         <outletCollection property="lineCollection1" destination="Zab-HJ-IJ4" collectionClass="NSMutableArray" id="AuB-ab-D1p"/>
                         <outletCollection property="lineCollection1" destination="cDh-HJ-aCD" collectionClass="NSMutableArray" id="rrg-Ot-tQz"/>
+                        <outletCollection property="leftArrowUpCollection" destination="rFU-A3-a4F" collectionClass="NSMutableArray" id="q4V-y5-xoX"/>
+                        <outletCollection property="rightArrowUpCollection" destination="PJg-IG-bit" collectionClass="NSMutableArray" id="wV2-XA-s7h"/>
+                        <outletCollection property="leftArrowUpCollection" destination="EIw-q4-QjH" collectionClass="NSMutableArray" id="j12-pE-meG"/>
+                        <outletCollection property="rightArrowUpCollection" destination="No1-LF-YT8" collectionClass="NSMutableArray" id="uSb-xR-b6P"/>
+                        <outletCollection property="leftArrowUpCollection" destination="F3l-qj-Jff" collectionClass="NSMutableArray" id="ZY5-4N-Wrt"/>
+                        <outletCollection property="rightArrowUpCollection" destination="4t9-vd-Ava" collectionClass="NSMutableArray" id="2lo-fT-5ax"/>
+                        <outletCollection property="leftArrowUpCollection" destination="Uaf-ni-jq9" collectionClass="NSMutableArray" id="ywG-2h-LYn"/>
+                        <outletCollection property="rightArrowUpCollection" destination="EKh-Mv-Qai" collectionClass="NSMutableArray" id="yJ1-f4-zYy"/>
+                        <outletCollection property="leftArrowUpCollection" destination="GPa-5V-5Dh" collectionClass="NSMutableArray" id="2vk-JI-WGP"/>
+                        <outletCollection property="rightArrowUpCollection" destination="gc6-lE-2s4" collectionClass="NSMutableArray" id="xSt-id-Zwn"/>
+                        <outletCollection property="leftArrowUpCollection" destination="WZh-pp-Txs" collectionClass="NSMutableArray" id="iyJ-Bb-RNQ"/>
+                        <outletCollection property="rightArrowUpCollection" destination="2AF-xh-Ihc" collectionClass="NSMutableArray" id="nq4-8K-RFY"/>
+                        <outletCollection property="leftArrowUpCollection" destination="Nrj-GI-hre" collectionClass="NSMutableArray" id="keQ-qJ-U6X"/>
+                        <outletCollection property="rightArrowUpCollection" destination="DfV-NA-IEq" collectionClass="NSMutableArray" id="C07-6d-dSL"/>
+                        <outletCollection property="leftArrowUpCollection" destination="FfM-sA-yNs" collectionClass="NSMutableArray" id="N8k-38-fy7"/>
+                        <outletCollection property="rightArrowUpCollection" destination="RDR-DJ-pFk" collectionClass="NSMutableArray" id="ucD-Fz-ReM"/>
+                        <outletCollection property="leftArrowUpCollection" destination="Z35-Li-UsF" collectionClass="NSMutableArray" id="mmV-ln-OIx"/>
+                        <outletCollection property="rightArrowUpCollection" destination="F0H-xo-6xW" collectionClass="NSMutableArray" id="owD-dt-V5K"/>
+                        <outletCollection property="leftArrowUpCollection" destination="n6M-97-fsO" collectionClass="NSMutableArray" id="I8Y-eJ-b1r"/>
+                        <outletCollection property="rightArrowUpCollection" destination="SnZ-a3-TuN" collectionClass="NSMutableArray" id="mWj-kU-BZo"/>
+                        <outletCollection property="leftArrowUpCollection" destination="RPz-ql-2S4" collectionClass="NSMutableArray" id="eCZ-Ri-SQy"/>
+                        <outletCollection property="rightArrowUpCollection" destination="tbA-Bg-cnx" collectionClass="NSMutableArray" id="5Zh-He-0ID"/>
+                        <outletCollection property="leftArrowUpCollection" destination="ZNm-Cs-aeT" collectionClass="NSMutableArray" id="PG1-Lm-cg0"/>
+                        <outletCollection property="rightArrowUpCollection" destination="L4K-Hq-Wfg" collectionClass="NSMutableArray" id="z01-WS-dnd"/>
+                        <outletCollection property="leftArrowUpCollection" destination="VS2-Dq-bls" collectionClass="NSMutableArray" id="5F1-Cs-M96"/>
+                        <outletCollection property="rightArrowUpCollection" destination="CJ5-E6-n8b" collectionClass="NSMutableArray" id="GJS-xr-Ysp"/>
+                        <outletCollection property="leftArrowUpCollection" destination="DEC-G1-aLJ" collectionClass="NSMutableArray" id="uCj-sv-Uh4"/>
+                        <outletCollection property="rightArrowUpCollection" destination="Dvl-Za-PoX" collectionClass="NSMutableArray" id="5Il-qQ-PJE"/>
+                        <outletCollection property="leftArrowDownCollection" destination="70H-9d-1Yn" collectionClass="NSMutableArray" id="5oO-nk-QcK"/>
+                        <outletCollection property="leftArrowDownCollection" destination="cwa-C1-Lpz" collectionClass="NSMutableArray" id="Jf8-FM-wDV"/>
+                        <outletCollection property="rightArrowDownCollection" destination="B3m-8F-8Uq" collectionClass="NSMutableArray" id="feO-f9-9Yx"/>
+                        <outletCollection property="rightArrowDownCollection" destination="pPa-fS-AuZ" collectionClass="NSMutableArray" id="3K1-AS-2TM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
